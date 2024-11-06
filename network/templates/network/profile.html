@@ -1,0 +1,59 @@
+{% extends "network/layout.html" %}
+
+{% block content %}
+<h2>{{ user_profile.username }}'s Profile</h2>
+
+<p>Followers: <span id="followers-count">{{ followers_count }}</span> | Following: <span id="following-count">{{ following_count }}</span></p>
+
+{% if user != user_profile %}   
+    <form>
+        {% csrf_token %}
+        <button id="follow-button" data-user-id="{{ user_profile.id }}">
+            {% if is_following %}
+                Unfollow
+            {% else %}
+                Follow
+            {% endif %}
+        </button>
+    </form>
+{% endif %}
+
+<h3>Posts</h3>
+
+{% for post in page_obj %}
+    <div class="post-container">
+        <h4 class="post-username"><a href="{% url 'profile' post.user.id %}" class="user-link">{{ post.user.username }}</a></h4>
+
+        <div class="post-content" id="post-content-{{ post.id }}">{{ post.content }}</div>
+
+        <small class="post-timestamp">{{ post.timestamp }}</small>
+        <p id="like-count-{{ post.id }}" class="post-likes">Likes: {{ post.likes.count }}</p>
+        
+        <div class="post-buttons">
+            {% if user == post.user %}
+            <button class="edit-button" data-post-id="{{ post.id }}">Edit</button>
+          {% endif %}
+          <button class="like-button" data-post-id="{{ post.id }}">
+            {% if user in post.likes.all %}
+                Unlike
+            {% else %}
+                Like
+            {% endif %}
+          </div>
+    </div>
+{% endfor %}
+
+
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    {% endif %}
+</div>
+
+{% endblock %}

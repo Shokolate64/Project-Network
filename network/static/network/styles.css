@@ -1,0 +1,366 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    color: #333;
+}
+
+.post {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post h4 {
+    margin: 0;
+    color: #333;
+}
+
+.post p {
+    margin: 10px 0;
+}
+
+small {
+    color: #888;
+}
+
+/* Buttons */
+button, .like-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover, .like-button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    margin: 0 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+.pagination span {
+    font-weight: bold;
+}
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    margin: 50px auto; 
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.login-container input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    margin: 50px auto; 
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.register-container label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.register-container input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.register-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.register-container button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+.new-post-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#new-post-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-post-form textarea {
+    width: 95%;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+#new-post-form button {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#new-post-form button:hover {
+    background-color: #0056b3;
+}
+
+
+.post-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left; 
+}
+
+
+.post-username {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+.post-content {
+    font-size: 16px;
+    color: #444;
+    margin: 10px 0;
+    align-self: flex-start; 
+}
+
+
+.post-timestamp, .post-likes {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+    align-self: flex-start; 
+}
+
+
+.post-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%; 
+    margin-top: 15px;
+}
+
+
+.edit-button, .like-button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover, .like-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el área de texto de edición */
+.edit-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el botón de guardado */
+.save-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los enlaces de usuario */
+.user-link {
+    color: black;         /* Color negro para texto */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;     /* Opcional: para destacar */
+}
+
+.user-link:visited,
+.user-link:hover,
+.user-link:active {
+    color: black;         /* Mantener color negro en todos los estados */
+    text-decoration: none; /* Sin subrayado en todos los estados */
+}
